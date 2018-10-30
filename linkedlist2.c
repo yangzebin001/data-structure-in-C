@@ -137,7 +137,7 @@ int ListDelete(LinkList L, int i, ElemType *e){
 	return 1;
 }
 
-//打印结点的位置和结点的数据 
+ 
 void PrintList(LinkList *L){
 	LinkList p,q;
 	int nox = 1;
