@@ -16,6 +16,21 @@ struct HashTbl{
 	List *TheLists;
 };
 
+int NextPrime(int a){
+    int data = a,i,flag = 0;
+    if(data <= 2) return 2;
+    
+    for(i = 2; i <= sqrt(data); i++ ){
+        if((data % i) == 0){
+            i = 2;
+            data++;
+            continue;
+        }
+    }
+    return data;
+	
+}
+
 int Hash(int Key, int TableSize){
 	return Key % TableSize;
 }
@@ -34,7 +49,7 @@ HashTable InitializeTable(int TableSize){
 		return NULL; 
 	} 
 	//H->TableSize = NextPrime(TableSize);
-	H->TableSize = TableSize;
+	H->TableSize = NextPrime(TableSize);
 	
 	H->TheLists = malloc(sizeof(List) * H->TableSize);
 	
@@ -111,16 +126,16 @@ void Traverse(HashTable H){
 int main(){
 
 	HashTable h;
-	h = InitializeTable(5);
+	h = InitializeTable(6);
 	Insert(5,h);
 	Insert(15,h);
 	Insert(3,h);
 	Insert(2,h);
-	
+	Traverse(h);
 	Position p;
 	p = Find(3,h);
 	
-	Traverse(h);
+	
 	TraverseNode(p);
 }
 

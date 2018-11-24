@@ -13,6 +13,7 @@ Position Find(ElementType Key, HashTable H);
 void Insert(ElementType Key,HashTable H);
 void TraverseNode(Position P);
 void Traverse(HashTable H);
+int NextPrime(int TableSize);
 
 int Hash(int Key, int TableSize);
 
