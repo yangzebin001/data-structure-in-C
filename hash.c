@@ -17,12 +17,12 @@ struct HashTbl{
 };
 
 int NextPrime(int a){
-    int data = a,i,flag = 0;
+    int data = a,i;
     if(data <= 2) return 2;
     
-    for(i = 2; i <= sqrt(data); i++ ){
+    for(i = 2; i <= ((int)sqrt(data) +1);i++){
         if((data % i) == 0){
-            i = 2;
+            i = 2-1;
             data++;
             continue;
         }
@@ -126,7 +126,7 @@ void Traverse(HashTable H){
 int main(){
 
 	HashTable h;
-	h = InitializeTable(6);
+	h = InitializeTable(8);
 	Insert(5,h);
 	Insert(15,h);
 	Insert(3,h);
