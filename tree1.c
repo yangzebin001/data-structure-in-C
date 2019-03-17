@@ -156,6 +156,7 @@ int main(){
 	t = Insert(25,t);
 	t = Insert(5,t);
 	t = Insert(-1,t);
+	t = Insert(-1,t);
 	Print(t,1);
 	
 //	t = Delete(54,t); 
